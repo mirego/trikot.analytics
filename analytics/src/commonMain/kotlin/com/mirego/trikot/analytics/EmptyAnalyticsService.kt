@@ -1,5 +1,8 @@
 package com.mirego.trikot.analytics
 
+import com.mirego.trikot.foundation.CommonJSExport
+
+@CommonJSExport
 class EmptyAnalyticsService : AnalyticsService {
     override val name: String = "ANALYTICS SERVICE NOT CONFIGURED"
 

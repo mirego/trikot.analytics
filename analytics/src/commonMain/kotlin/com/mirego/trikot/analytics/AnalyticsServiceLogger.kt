@@ -1,7 +1,9 @@
 package com.mirego.trikot.analytics
 
+import com.mirego.trikot.foundation.CommonJSExport
 import com.mirego.trikot.foundation.concurrent.AtomicReference
 
+@CommonJSExport
 class AnalyticsServiceLogger(private val analyticsService: AnalyticsService) : AnalyticsService {
     override val name: String = "AnalyticsServiceLogger"
 
