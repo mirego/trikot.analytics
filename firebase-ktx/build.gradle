@@ -9,7 +9,6 @@ plugins {
 
 repositories {
     google()
-    jcenter()
     mavenLocal()
     mavenCentral()
     maven { url('https://s3.amazonaws.com/mirego-maven/public') }
