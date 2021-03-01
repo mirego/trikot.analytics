@@ -59,7 +59,7 @@ publishing {
     publications {
         create<MavenPublication>("mixpanelAar") {
             artifactId = "mixpanel-ktx"
-            artifact("$buildDir/outputs/aar/${artifactId}-release.aar")
+            artifact("$buildDir/outputs/aar/$artifactId-release.aar")
             artifact(tasks["sourcesJar"])
         }
     }
