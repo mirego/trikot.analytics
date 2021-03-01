@@ -12,6 +12,7 @@ repositories {
     mavenLocal()
     maven { url "https://kotlin.bintray.com/kotlinx" }
     maven { url 'https://jitpack.io' }
+    maven { url 'https://plugins.gradle.org/m2/' }
     maven { url('https://s3.amazonaws.com/mirego-maven/public') }
 }
 
@@ -31,9 +32,8 @@ kotlin {
     ios()
     iosArm32('iosArm32')
     tvos()
-    js(LEGACY) {
+    js(IR) {
         browser()
-        nodejs()
     }
 
     android {
