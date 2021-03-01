@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     id("kotlin-platform-android")
     id("org.jlleitschuh.gradle.ktlint")
-    id("digital.wup.android-maven-publish").version("3.6.2")
+    id("maven-publish")
     id("mirego.release").version("2.0")
     id("mirego.publish").version("1.0")
 }
@@ -44,10 +44,23 @@ release {
     tagPrefix = "mixpanel-ktx-"
 }
 
+tasks {
+    val sourcesJar by registering(Jar::class) {
+        from(android.sourceSets.getByName("main").java.srcDirs)
+        archiveClassifier.set("sources")
+    }
+
+    artifacts {
+        archives(sourcesJar)
+    }
+}
+
 publishing {
     publications {
-        register("mavenAar", MavenPublication::class) {
-            from(components["android"])
+        create<MavenPublication>("mixpanelAar") {
+            artifactId = "mixpanel-ktx"
+            artifact("$buildDir/outputs/aar/${artifactId}-release.aar")
+            artifact(tasks["sourcesJar"])
         }
     }
 }
