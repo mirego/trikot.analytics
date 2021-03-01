@@ -24,7 +24,6 @@ dependencies {
     api("com.mirego.trikot:streams:${project.extra["trikot_streams_version"]}")
     api("com.mirego.trikot:trikotFoundation:${project.extra["trikot_foundation_version"]}")
     implementation("com.mixpanel.android:mixpanel-android:5.8.2")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.3.0")
 }
 
