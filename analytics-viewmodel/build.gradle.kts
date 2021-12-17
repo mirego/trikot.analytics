@@ -24,7 +24,6 @@ kotlin {
     jvm()
     ios()
     iosArm32("iosArm32")
-    iosSimulatorArm64()
     tvos()
     watchos()
     macosX64()
@@ -64,10 +63,6 @@ kotlin {
 
         val iosArm64Main by getting {
             dependsOn(nativeMain)
-        }
-
-        val iosSimulatorArm64Main by getting {
-            dependsOn(iosArm64Main)
         }
 
         val iosX64Main by getting {
